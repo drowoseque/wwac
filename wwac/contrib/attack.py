@@ -31,12 +31,12 @@ def main():
     @timeit
     def run_sync_attack():
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as thread_pool_executor:
-            thread_pool_executor.map(single_request, sync_urls)
+            list(thread_pool_executor.map(single_request, sync_urls))
 
     @timeit
     def run_async_attack():
         with ThreadPoolExecutor(max_workers=MAX_WORKERS) as thread_pool_executor:
-            thread_pool_executor.map(single_request, async_urls)
+            list(thread_pool_executor.map(single_request, async_urls))
 
     run_sync_attack()
     run_async_attack()
