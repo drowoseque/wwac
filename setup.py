@@ -13,5 +13,6 @@ setup(
         'click==6.7',
         'tornado==5.0.2',
         'requests==2.21.0',
+        'statsd==3.3.0'
     ]
 )
